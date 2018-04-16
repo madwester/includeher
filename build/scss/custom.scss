@@ -1,3 +1,251 @@
+// ESSENTIALS 
+@import 'mixins';
+@import 'variables';
+
 body {
-    color: pink; 
+  //position: relative;
+}
+button, h1 {
+  font-family: $oswald;
+  @include ease-animation(0.3s);
+  cursor: pointer;
+}
+a {
+  color: black;
+}
+ul {
+  padding: 0;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+main { 
+  margin: 20px 0 30px 0;
+}
+/*-----------------------
+NAVBAR
+-----------------------*/
+.navbar-light .navbar-toggler { 
+  color: $black;
+  background-color: transparent;
+  border: 0;
+  &:focus {
+    outline: none;
+  }
+}
+.navbar {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9); 
+  padding: 10px 20px;
+}
+.navigationSymbol {
+  color: $brandPink;
+}
+.navbar-toggler {
+  @include reset();
+}
+
+.navbar-brand {
+  img { 
+    width: 75%;
+  }
+}
+.nav-item {
+  color: $black;
+}
+.nav-link {
+  font-family: $roboto-mono; 
+  margin: 10px;
+  color: $black;
+}
+.navBtn {
+  display: block;
+  //height: 50px;
+  font-family: $roboto-mono;
+  background-color: transparent;
+  border-radius: 7px;
+  border: 2px solid $brandPink;
+  margin: 0 0 0 12px;
+  padding: 10px 20px;
+  &:hover {
+    background-color: $brandPink;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-brand {
+    img {
+      width: 50%;
+    }
+  }
+  .nav-link {
+    margin: 0;
+  }
+  .navbar-nav {
+    text-align: right;
+  }
+  .navBtn {
+    width: 100%;
+    border-radius: 0;
+    padding: 5px;
+    margin: 5px;
+  }
+}
+/*-----------------------
+FEATURE
+-----------------------*/
+
+.feature { 
+  padding: 300px;
+  text-align: center;
+  height: auto;
+  background-image: url('../../build/images/feature-image-hp.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  h1 {
+    color: $white;
+    font-size: 3.5em;
+    letter-spacing: 1px; //0px is default 
+  }
+}
+.featureBtn {
+  margin: 30px;
+  background-color: $brandPink;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  padding: 10px 50px;
+}
+@media only screen and (max-width: 991px) {
+  .feature {
+    padding: 120px 40px;
+    h1 {
+      font-size: 2em;
+    }
+  }
+  .featureBtn {
+    margin: 10px;
+    font-size: 1.2em;
+    padding: 10px 20px;
+  }
+}
+
+.blue {
+  background-color: $brandBlue;
+  color: $white;
+  a {
+    color: $white;
+  }
+}
+.pink {
+  background-color: $brandPink;
+}
+.yellow {
+  background-color: $brandYellow;
+}
+.gray {
+  background-color: $brandGray;
+}
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 767px) {
+  .flexRow {
+    flex-direction: column;
+  }
+}
+.homepageItem {
+  height: 350px;
+  margin: 20px 20px 0 20px;
+  padding: 50px;
+  font-size: 1.2em; 
+  a {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: $oswald;
+    letter-spacing: 2px;
+  }
+  i { 
+    margin-left: 10px;
+  }
+}
+.homepageItem.large {
+  width: 65%;
+}
+.homepageItem.small {
+  width: 35%;
+}
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .homepageItem {
+    padding: 20px;
+    font-size: 0.9em;
+    margin: 10px 5px;
+    height: 270px;
+  }
+}
+@media only screen and (max-width: 766px) {
+  .homepageItem {
+    margin: 10px 0;
+  }
+  .homepageItem.large {
+    width: 100%;
+  }
+  .homepageItem.small {
+    width: 100%;
+  }
+}
+
+/*-----------------------
+FOOTER
+-----------------------*/
+footer {
+  padding: 20px 40px;
+  background-color: $lightGray;
+}
+.itemFoot {
+  width: 50%;
+  img {
+    width: 100px;
+  }
+  p {
+    font-size: 0.9em;
+  }
+}
+.socialMediaList {
+  margin: 15px;
+  list-style: none;
+  li {
+    display: inline-block;
+    i {
+      text-align: center;
+      width: 45px;
+      height: 45px;
+      font-size: 18px;
+      margin: 8px;
+      background-color: lighten($brandPink, 10%);
+      padding: 14px;
+      border-radius: 50%;
+      color: $iconGray;
+      &:hover {
+        background-color: $iconGray;
+        cursor: pointer;
+        color: lighten($brandPink, 10%);
+        @include ease-animation(0.3s);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 766px) {
+  .itemFoot {
+    width: 100%;
+    text-align: center; 
+    img {
+      width: 90px;
+    }
+  }
 }
