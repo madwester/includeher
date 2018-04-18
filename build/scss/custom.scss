@@ -1,10 +1,9 @@
 // ESSENTIALS 
 @import 'mixins';
 @import 'variables';
+//@import '/compontents/bootstrap/scss/mixins/breakpoints.scss';
+//@import '/compontents/bootstrap/scss/variables.scss';
 
-body {
-  //position: relative;
-}
 button, h1 {
   font-family: $oswald;
   @include ease-animation(0.3s);
@@ -12,7 +11,7 @@ button, h1 {
 }
 a {
   color: black;
-}
+} 
 ul {
   padding: 0;
 }
@@ -24,6 +23,12 @@ ul {
 }
 main { 
   margin: 20px 0 30px 0;
+} 
+.active {
+  border-bottom: 1px solid black;
+}
+.bodyAbout {
+  background-color: $brandPink;
 }
 /*-----------------------
 NAVBAR
@@ -40,7 +45,7 @@ NAVBAR
   position: absolute;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9); 
-  padding: 10px 20px;
+  padding: 15px 25px;
 }
 .navigationSymbol {
   color: $brandPink;
@@ -55,12 +60,12 @@ NAVBAR
   }
 }
 .nav-item {
-  color: $black;
+  //color: $black;
 }
 .nav-link {
   font-family: $roboto-mono; 
   margin: 10px;
-  color: $black;
+  color: $black!important;
 }
 .navBtn {
   display: block;
@@ -102,8 +107,7 @@ FEATURE
 .feature { 
   padding: 300px;
   text-align: center;
-  height: auto;
-  background-image: url('../../build/images/feature-image-hp.png');
+  height: 1000px;
   background-repeat: no-repeat;
   background-size: 100%;
   h1 {
@@ -112,13 +116,20 @@ FEATURE
     letter-spacing: 1px; //0px is default 
   }
 }
+.featureHome {
+  background-image: url('../../build/images/feature-image-hp.png');
+}
+.featureAbout {
+  background-image: url('../../build/images/feature-image-two-girls.png'); 
+}
 .featureBtn {
   margin: 30px;
   background-color: $brandPink;
+  border-radius: 7px;
   color: $white;
   text-transform: uppercase;
   font-size: 1.4em;
-  padding: 10px 50px;
+  padding: 10px 40px;
 }
 @media only screen and (max-width: 991px) {
   .feature {
@@ -143,6 +154,7 @@ FEATURE
 }
 .pink {
   background-color: $brandPink;
+  
 }
 .yellow {
   background-color: $brandYellow;
@@ -164,6 +176,7 @@ FEATURE
   margin: 20px 20px 0 20px;
   padding: 50px;
   font-size: 1.2em; 
+  @include box-shadow(2px 2px 3px 0px rgba(184,184,184,1));
   a {
     text-transform: uppercase;
     font-weight: 500;
@@ -201,10 +214,39 @@ FEATURE
 }
 
 /*-----------------------
+ABOUT
+-----------------------*/
+
+.contentAbout {
+  width: 80%;
+  padding: 50px 70px 90px 70px;
+  margin: -300px auto 100px auto;
+  background-color: $white;
+  @include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.4));
+  h1 {
+    text-align: center;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+    font-family: $oswald;
+  }  
+  a {
+    text-transform: uppercase;
+    color: $brandPink;
+    font-weight: 500;
+
+  }
+  i { 
+    margin-left: 10px;
+  }
+}
+
+
+
+/*-----------------------
 FOOTER
 -----------------------*/
 footer {
-  padding: 20px 40px;
+  padding: 30px 40px 20px 40px;
   background-color: $lightGray;
 }
 .itemFoot {
@@ -217,7 +259,6 @@ footer {
   }
 }
 .socialMediaList {
-  margin: 15px;
   list-style: none;
   li {
     display: inline-block;

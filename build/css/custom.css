@@ -23,6 +23,12 @@ ul {
 main {
   margin: 20px 0 30px 0; }
 
+.active {
+  border-bottom: 1px solid black; }
+
+.bodyAbout {
+  background-color: #E4BCB2; }
+
 /*-----------------------
 NAVBAR
 -----------------------*/
@@ -37,7 +43,7 @@ NAVBAR
   position: absolute;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 10px 20px; }
+  padding: 15px 25px; }
 
 .navigationSymbol {
   color: #E4BCB2; }
@@ -49,13 +55,10 @@ NAVBAR
 .navbar-brand img {
   width: 75%; }
 
-.nav-item {
-  color: #000; }
-
 .nav-link {
   font-family: "Roboto Mono", monospace;
   margin: 10px;
-  color: #000; }
+  color: #000 !important; }
 
 .navBtn {
   display: block;
@@ -87,8 +90,7 @@ FEATURE
 .feature {
   padding: 300px;
   text-align: center;
-  height: auto;
-  background-image: url("../../build/images/feature-image-hp.png");
+  height: 1000px;
   background-repeat: no-repeat;
   background-size: 100%; }
   .feature h1 {
@@ -96,13 +98,20 @@ FEATURE
     font-size: 3.5em;
     letter-spacing: 1px; }
 
+.featureHome {
+  background-image: url("../../build/images/feature-image-hp.png"); }
+
+.featureAbout {
+  background-image: url("../../build/images/feature-image-two-girls.png"); }
+
 .featureBtn {
   margin: 30px;
   background-color: #E4BCB2;
+  border-radius: 7px;
   color: #fff;
   text-transform: uppercase;
   font-size: 1.4em;
-  padding: 10px 50px; }
+  padding: 10px 40px; }
 
 @media only screen and (max-width: 991px) {
   .feature {
@@ -141,7 +150,10 @@ FEATURE
   height: 350px;
   margin: 20px 20px 0 20px;
   padding: 50px;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  -webkit-box-shadow: 2px 2px 3px 0px #b8b8b8;
+  -moz-box-shadow: 2px 2px 3px 0px #b8b8b8;
+  box-shadow: 2px 2px 3px 0px #b8b8b8; }
   .homepageItem a {
     text-transform: uppercase;
     font-weight: 500;
@@ -172,10 +184,33 @@ FEATURE
     width: 100%; } }
 
 /*-----------------------
+ABOUT
+-----------------------*/
+.contentAbout {
+  width: 80%;
+  padding: 50px 70px 90px 70px;
+  margin: -300px auto 100px auto;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.4); }
+  .contentAbout h1 {
+    text-align: center;
+    margin: 0 0 40px 0;
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif; }
+  .contentAbout a {
+    text-transform: uppercase;
+    color: #E4BCB2;
+    font-weight: 500; }
+  .contentAbout i {
+    margin-left: 10px; }
+
+/*-----------------------
 FOOTER
 -----------------------*/
 footer {
-  padding: 20px 40px;
+  padding: 30px 40px 20px 40px;
   background-color: #F5F5F5; }
 
 .itemFoot {
@@ -186,7 +221,6 @@ footer {
     font-size: 0.9em; }
 
 .socialMediaList {
-  margin: 15px;
   list-style: none; }
   .socialMediaList li {
     display: inline-block; }
